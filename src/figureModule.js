@@ -1,7 +1,5 @@
-class Module extends BaseModule {
-  constructor(name) {
-    super(name);
-  }
+class FigureModule {
+  constructor() {}
 
   trigger() {
     // Метод, который запускает работу модуля
@@ -36,4 +34,4 @@ class Module extends BaseModule {
   }
 }
 
-export default Module;
+export default FigureModule;

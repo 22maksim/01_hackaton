@@ -1,10 +1,12 @@
 import { Menu } from './core/menu';
+import FigureModule from './figureModule';
 
 export class ContextMenu extends Menu {
   constructor() {
     super();
-    this.items = [];
+    this.items = ['Создать фигуру', '...'];
     this.menuElement = null;
+    this.figureModule = new FigureModule();
   }
 
   open(x, y) {
@@ -27,7 +29,7 @@ export class ContextMenu extends Menu {
   }
 
   add(item) {
-    this.items.push(item);
+    // this.items.push(item);
   }
 
   createMenu() {
@@ -37,10 +39,10 @@ export class ContextMenu extends Menu {
     // Добавляем элементы меню в DOM
     for (let item of this.items) {
       const menuItem = document.createElement('li');
-      menuItem.textContent = item.name;
+      menuItem.textContent = item;
       menuItem.addEventListener('click', () => {
         // Вызываем метод trigger() соответствующего модуля при клике на пункт меню
-        item.trigger();
+        this.figureModule.trigger();
         this.close();
       });
       this.menuElement.appendChild(menuItem);
