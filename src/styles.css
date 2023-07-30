@@ -13,6 +13,7 @@ body {
   width: 100%;
   padding: 2rem;
   background: linear-gradient(3deg, #e6d16c, #16014c);
+  overflow: hidden;
 }
 
 .menu {
@@ -51,6 +52,7 @@ body {
   margin: 3px;
   border-radius: 20px;
   display: none;
+  z-index: 20;
 }
 
 .context-menu li {
