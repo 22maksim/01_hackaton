@@ -62,3 +62,73 @@ body {
 .figure {
   border: 1px solid #000000;
 }
+
+.contur {
+  border: 3px solid black;
+  width: 298px;
+  height: 430px;
+  position: absolute;
+  top:30%;  
+  left:50%;  
+  margin:-100px 0 0 -100px; 
+  background: #E0E0E0;
+  border-radius: 10px;
+  cursor: pointer;
+  caret-color: transparent;
+  user-select: none;
+}
+
+.screen {
+   border: 2px solid black;
+   width: 280px;
+   height: 80px;
+   background: black;
+   margin-left: 6px;
+   margin-right: 6px;
+   margin-top: 10px;
+   color: white;
+   font-size: 50px;
+   text-align: right;
+   border-radius: 10px;
+}
+
+.buttom {
+   border: 3px solid black;
+   width: 280px;
+   height: 288px;
+   margin-top: 25px;
+   margin-left: 6px;
+   margin-right: 6px;
+   
+}
+
+.buttom_C, .buttom_equals, .buttom_symbol, .buttom_number{
+   border: 3px solid black;
+   width: 62px;
+   height: 50px;
+   font-size: 35px;
+   text-align: center;
+   margin-top: 2px;
+   margin-left: 2px;
+   background: orange;
+   border-radius: 20px;
+   display: inline-block;
+}
+
+.buttom_number {
+   background: none;
+}
+
+.buttom_equals {
+   background: blue;
+   width: 200px;
+}
+
+.buttom_C {
+   background: red;
+}
+
+
+.buttom_C:hover, .buttom_equals:hover, .buttom_symbol:hover, .buttom_number:hover{
+   background: rgb(154, 154, 193);
+   }
