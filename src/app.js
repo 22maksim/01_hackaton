@@ -10,8 +10,8 @@ function handleContextMenu(event) {
 
 document.addEventListener('contextmenu', handleContextMenu);
 
-function handleClick() {  //core main.js strings 6-12?
-  contextMenu.close();
-}
+// function handleClick() {  //core main.js strings 6-12?
+//   contextMenu.close();
+// }
 
-document.addEventListener('click', handleClick);
+// document.addEventListener('click', handleClick);
