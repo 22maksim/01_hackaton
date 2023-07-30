@@ -5,13 +5,16 @@ class FigureModule {
     // Метод, который запускает работу модуля
     //  показывает случайную фигуру на экране
     const figure = document.createElement('div');
+    const [randomX, randomY] = this.getRandomPosition();
+    let maxX = window.innerWidth;
+    let maxY = window.innerHeight;
     figure.className = 'figure';
     figure.style.backgroundColor = this.getRandomColor();
     figure.style.width = this.getRandomSize() + 'px';
     figure.style.height = this.getRandomSize() + 'px';
     figure.style.position = 'absolute';
-    figure.style.left = this.getRandomPosition() + 'px';
-    figure.style.top = this.getRandomPosition() + 'px';
+    figure.style.left = Math.min(randomX, maxX) + 'px';
+    figure.style.top = Math.min(randomY, maxY) + 'px';
     document.body.appendChild(figure);
   }
 
@@ -29,8 +32,11 @@ class FigureModule {
   }
 
   getRandomPosition() {
-    // Генерация случайной позиции фигуры
-    return Math.floor((window.innerWidth - 100) * Math.random());
+    let maxX = window.innerWidth;
+    let maxY = window.innerHeight;
+    let randomX = maxX * Math.random();
+    let randomY = maxY * Math.random();
+    return [randomX, randomY];
   }
 }
 
