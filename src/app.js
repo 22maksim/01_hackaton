@@ -1,7 +1,8 @@
 import './styles.css';
 import { ContextMenu } from './menu';
 
-const contextMenu = new ContextMenu();
+
+const contextMenu = new ContextMenu('.menu');
 
 function handleContextMenu(event) {
   event.preventDefault();
@@ -10,7 +11,7 @@ function handleContextMenu(event) {
 
 document.addEventListener('contextmenu', handleContextMenu);
 
-function handleClick() {
+function handleClick() {  //core main.js strings 6-12?
   contextMenu.close();
 }
 

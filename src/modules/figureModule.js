@@ -1,4 +1,6 @@
-class FigureModule {
+import { Module } from '../core/module'
+
+class FigureModule extends Module {
   constructor() {}
 
   trigger() {

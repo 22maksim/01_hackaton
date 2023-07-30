@@ -1,57 +1,54 @@
 import { Menu } from './core/menu';
-import FigureModule from './figureModule';
+import FigureModule from './modules/figureModel';
+import { BackgroundModule } from './modules/background.module'
+import { CustomMessageModule } from './modules/customMessageModule';
+import { RateBitcoin } from './modules/rate-bitcoin';
+import { Module } from './core/module';
 
 export class ContextMenu extends Menu {
-  constructor() {
-    super();
-    this.items = ['Создать фигуру', '...'];
-    this.menuElement = null;
-    this.figureModule = new FigureModule();
+  constructor(selector) {
+    super(selector)
+    this.items = []
   }
 
   open(x, y) {
-    if (this.items.length === 0) {
-      return;
+    const elLi = document.querySelector('.menu-item');
+    if (!elLi) {
+      this.createMenu()
     }
-    if (!this.menuElement) {
-      this.createMenu();
-    }
-
-    this.menuElement.style.left = x + 'px';
-    this.menuElement.style.top = y + 'px';
-    this.menuElement.style.display = 'block';
+    this.el.style.left = x + 'px'
+    this.el.style.top = y + 'px'
+    this.el.style.display = 'block'
   }
 
   close() {
-    if (this.menuElement) {
-      this.menuElement.style.display = 'none';
-    }
+    this.el.style.display = 'none'
   }
 
-  add(module) {
-    if (module instanceof ContextMenu) {
-      this.items.push(module);
+  add(item) {
+    if (item instanceof Module) {
+      this.items.push(item)
     } else {
       console.log('Invalid module');
     }
   }
 
-  createMenu() {
-    // Создаем DOM элемент для меню
-    this.menuElement = document.createElement('ul');
-    this.menuElement.className = 'context-menu';
+  async createMenu() {
+    // Sklad
+    this.add(new RateBitcoin())
+    this.add(new BackgroundModule('background','Поменять цвет'))
+    this.add(new FigureModule('figure','Создать фигуру')) 
+    this.add(new CustomMessageModule('customMessage','Кастомное сообщение'))
     // Добавляем элементы меню в DOM
     for (let item of this.items) {
-      const menuItem = document.createElement('li');
-      menuItem.textContent = item;
-      menuItem.addEventListener('click', () => {
-        // Вызываем метод trigger() соответствующего модуля при клике на пункт меню
-        this.figureModule.trigger();
-        this.close();
+      const menuItem = item.toHTML()
+      this.el.insertAdjacentHTML('afterbegin', menuItem)
+      const typeData = item.type
+      const search = document.querySelector(`li[data-type="${typeData}"]`)
+      search.addEventListener('click', () => {
+        item.trigger()
+        this.close()
       });
-      this.menuElement.appendChild(menuItem);
     }
-    // Добавляем меню в DOM дерево
-    document.body.appendChild(this.menuElement);
   }
 }
