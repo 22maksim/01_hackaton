@@ -1,5 +1,5 @@
 import { Menu } from './core/menu';
-import FigureModule from './modules/figureModule';
+import FigureModule from './modules/figureModel';
 import { BackgroundModule } from './modules/background.module'
 import { CustomMessageModule } from './modules/customMessageModule';
 import { RateBitcoin } from './modules/rate-bitcoin';
