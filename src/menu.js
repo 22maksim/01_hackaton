@@ -4,6 +4,7 @@ import { BackgroundModule } from './modules/background.module'
 import { CustomMessageModule } from './modules/customMessageModule';
 import { RateBitcoin } from './modules/rate-bitcoin';
 import { Module } from './core/module';
+import { Calculator } from './modules/calculator';
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -35,7 +36,8 @@ export class ContextMenu extends Menu {
 
   async createMenu() {
     // Sklad
-    this.add(new RateBitcoin())
+    this.add(new Calculator('calculatщк', 'калькулятор'))
+    this.add(new RateBitcoin('modal', 'Курс биткоина'))
     this.add(new BackgroundModule('background','Поменять цвет'))
     this.add(new FigureModule('figure','Создать фигуру')) 
     this.add(new CustomMessageModule('customMessage','Кастомное сообщение'))
