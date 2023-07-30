@@ -28,8 +28,12 @@ export class ContextMenu extends Menu {
     }
   }
 
-  add(item) {
-    // this.items.push(item);
+  add(module) {
+    if (module instanceof ContextMenu) {
+      this.items.push(module);
+    } else {
+      console.log('Invalid module');
+    }
   }
 
   createMenu() {
