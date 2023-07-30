@@ -1,6 +1,7 @@
 import { Menu } from './core/menu';
 import FigureModule from './modules/figureModel';
 import { BackgroundModule } from './modules/background.module'
+import { CustomMessageModule } from './modules/customMessageModule';
 
 export class ContextMenu extends Menu {
   constructor() {
@@ -35,6 +36,8 @@ export class ContextMenu extends Menu {
   createMenu() {
     this.add(new BackgroundModule('background','Поменять цвет'))
     this.add(new FigureModule('figure','Создать фигуру')) 
+    this.add(new CustomMessageModule('customMessage','Кастомное сообщение'))
+    // this.add(new CustomMessageModule('customMessage','кастомное сообщение'))
     //здесь можно добалять любые модули, создавая экземпляр класса и импортируя модуль из папки модулей
 
     // Создаем DOM элемент для меню

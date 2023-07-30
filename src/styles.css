@@ -63,3 +63,11 @@ body {
 .figure {
   border: 1px solid #000000;
 }
+
+.customMessage {
+  position: absolute;
+  right: 300px;
+  top: 0px;
+  background:rgb(4, 102, 17);
+  color: white;
+}
