@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
 * {
@@ -9,10 +10,7 @@
 body {
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  height: 100vh;
-  width: 100%;
-  padding: 2rem;
-  background: linear-gradient(3deg, #e6d16c, #16014c);
+  padding: 0;
 }
 
 .menu {
@@ -23,6 +21,109 @@ body {
   border-radius: 5px;
   display: none;
   list-style: none;
+}
+
+.menu.open {
+  display: block;
+}
+
+.menu .menu-item {
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  border-radius: inherit;
+}
+
+.menu .menu-item:hover {
+  background: #343434;
+}
+
+.figure {
+  border: 1px solid #000000;
+}
+
+.customMessage {
+  position: absolute;
+  right: 300px;
+  top: 0px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* rate bitcoin */
+
+.modal {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  width: 80%;
+  min-height: 35rem;
+  background-color: rgb(214, 175, 169);
+  border-radius: 30% 30% 20px 20px;
+  border: 2px solid rgb(124, 106, 124);
+  font-size: 25px;
+  color: #6e3535;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rate1 {
+  border: 2px solid rgb(128, 93, 93);
+  border-radius: 20px;
+  width: 90%;
+  background-color: #8b7560;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rate2 {
+  border: 2px solid rgb(187, 134, 134);
+  border-radius: 20px;
+  width: 90%;
+  background-color: #8b7560;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rate3 {
+  border: 2px solid rgb(128, 93, 93);
+  border-radius: 20px;
+  width: 90%;
+  background-color: #8b7560;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rate4 {
+  border: 2px solid rgb(128, 93, 93);
+  border-radius: 20px;
+  width: 90%;
+  background-color: #8b7560;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.col-p {
+  color: #520404;
+}
+
+.close-block {
+  position: absolute;
+  right: 1%;
+  top: 53%;
+}
+.close-block:hover {
+  cursor: pointer;
 }
 
 .menu.open {
