@@ -1,20 +1,25 @@
 import {Module} from '../core/module'
 
 export class RateBitcoin extends Module {
-  constructor() {
-    super('modal', 'Курс биткоина')
+  constructor(type, text) {
+    super(type, text)
   }
 
   async trigger() {
-    const elModal = document.querySelector('.modal')
-    if (!elModal) {
-      const bitcoinApi = await fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
-      const responsBitcoin = await bitcoinApi.json()
-      const price = responsBitcoin.bpi
-      const time = responsBitcoin.time
-      const disclaimer = responsBitcoin.disclaimer
-      this.modal(price, time, disclaimer)
+    try {
+      const elModal = document.querySelector('.modal')
+      if (!elModal) {
+        const bitcoinApi = await fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
+        const responsBitcoin = await bitcoinApi.json()
+        const price = responsBitcoin.bpi
+        const time = responsBitcoin.time
+        const disclaimer = responsBitcoin.disclaimer
+        this.modal(price, time, disclaimer)
+      }
+    } catch(error) {
+      console.error('Ошибка:', error)
     }
+  
   }
 
   modal(price, time, disclaimer) {
