@@ -1,0 +1,205 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.menu {
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
+}
+
+.menu.open {
+  display: block;
+}
+
+.menu .menu-item {
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  border-radius: inherit;
+}
+
+.menu .menu-item:hover {
+  background: #343434;
+}
+
+.figure {
+  width: 200px;
+  height: 100px;
+  background: red;
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+  border-radius: 100px / 50px;
+}
+
+.customMessage {
+  position: absolute;
+  right: 300px;
+  top: 0px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* rate bitcoin */
+
+.modal {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  width: 80%;
+  min-height: 35rem;
+  background-color: rgb(214, 175, 169);
+  border-radius: 20px 20px 20px 20px;
+  border: 2px solid rgb(124, 106, 124);
+  font-size: 25px;
+  color: #6e3535;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rate1 {
+  border: 2px solid rgb(128, 93, 93);
+  border-radius: 20px;
+  width: 90%;
+  background-color: #8b7560;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rate2 {
+  border: 2px solid rgb(187, 134, 134);
+  border-radius: 20px;
+  width: 90%;
+  background-color: #8b7560;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rate3 {
+  border: 2px solid rgb(128, 93, 93);
+  border-radius: 20px;
+  width: 90%;
+  background-color: #8b7560;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rate4 {
+  border: 2px solid rgb(128, 93, 93);
+  border-radius: 20px;
+  width: 90%;
+  background-color: #8b7560;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.col-p {
+  color: #520404;
+}
+
+.close-block {
+  position: absolute;
+  right: 1%;
+  top: 53%;
+}
+.close-block:hover {
+  cursor: pointer;
+}
+
+/* calc */
+
+.contur {
+  border: 3px solid black;
+  width: 298px;
+  height: 430px;
+  position: absolute;
+  top:30%;  
+  left:50%;  
+  margin:-100px 0 0 -100px; 
+  background: #E0E0E0;
+  border-radius: 10px;
+  cursor: pointer;
+  caret-color: transparent;
+  user-select: none;
+}
+
+.screen {
+   border: 2px solid black;
+   width: 280px;
+   height: 80px;
+   background: black;
+   margin-left: 6px;
+   margin-right: 6px;
+   margin-top: 10px;
+   color: white;
+   font-size: 50px;
+   text-align: right;
+   border-radius: 10px;
+}
+
+.buttom {
+   border: 3px solid black;
+   width: 280px;
+   height: 288px;
+   margin-top: 25px;
+   margin-left: 6px;
+   margin-right: 6px;
+   
+}
+
+.buttom_C, .buttom_equals, .buttom_symbol, .buttom_number{
+   border: 3px solid black;
+   width: 62px;
+   height: 50px;
+   font-size: 35px;
+   text-align: center;
+   margin-top: 2px;
+   margin-left: 2px;
+   background: orange;
+   border-radius: 20px;
+   display: inline-block;
+}
+
+.buttom_number {
+   background: none;
+}
+
+.buttom_equals {
+   background: blue;
+   width: 200px;
+}
+
+.buttom_C {
+   background: red;
+}
+
+
+.buttom_C:hover, .buttom_equals:hover, .buttom_symbol:hover, .buttom_number:hover{
+   background: rgb(154, 154, 193);
+   }
